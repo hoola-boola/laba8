@@ -16,7 +16,11 @@
 </head>
 <body>
     <div class="block">
-        <img id="kitty" width="256" src="https://i.pinimg.com/originals/34/e5/a8/34e5a8e0f59ea02b1d212ab4a2528050.png"/>
+        <div>
+        <img width="256" style="transform: translate(132px, 0);" src="one-part.png"/>
+        <img id="kitty"  width="256" src="https://i.pinimg.com/originals/34/e5/a8/34e5a8e0f59ea02b1d212ab4a2528050.png"/>
+        <img width="256" style="transform: translate(-132px, 0);" src="two-part.png"/>
+        </div>
         <button onClick="pipec()">Выпустить кракена</button>
         <a href="index.html" style="width: 128px; height: 32px; margin:64px">Хочу домой</a>
      </div>
@@ -25,8 +29,8 @@
         setTimeout(cat, 1);
         dagestan = 0;
         function cat(){
-        document.getElementById("kitty").style.transform = `scale(${Math.cos(dagestan)}, 1)`;
-        dagestan+=0.05;
+        document.getElementById("kitty").style.transform = `scale(1, ${Math.cos(dagestan)})`;
+        dagestan+=0.04;
         setTimeout(cat, 10);
         if(dagestan>360) dagestan = 0;
         }
