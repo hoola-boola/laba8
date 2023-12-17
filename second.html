@@ -16,7 +16,20 @@
 </head>
 <body>
     <div class="block">
+        <img id="kitty" width="256" src="https://i.pinimg.com/originals/34/e5/a8/34e5a8e0f59ea02b1d212ab4a2528050.png"/>
         <button onClick="pipec()">Выпустить кракена</button>
         <a href="index.html" style="width: 128px; height: 32px; margin:64px">Хочу домой</a>
      </div>
+
+     <script>
+        setTimeout(cat, 1);
+        dagestan = 0;
+        function cat(){
+        document.getElementById("kitty").style.transform = `scale(${Math.cos(dagestan)}, 1)`;
+        dagestan+=0.05;
+        setTimeout(cat, 10);
+        if(dagestan>360) dagestan = 0;
+        }
+     </script>
+
 </body>
