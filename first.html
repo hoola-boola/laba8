@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title>Тонусный сайт || Паге 2</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+    <script language="JavaScript">
+        num = 0;
+        e = 0.001;
+        function STEPEN(){
+            n = document.getElementById("holabola").value;
+            console.log("Пользователь ввел:",n);
+            if(n==null || n==undefined || n=='' || Number.isInteger(n)){
+                alert("Че за фигню ты ввел");
+            }else{
+            gg = 0;
+            for(i=1; i<=5; i++){
+                gg+=n**4;
+                n++;
+            }
+            document.getElementById("text").innerHTML = gg;
+            console.log("Вывелось:",gg);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="block">
+        <h1 class="text" style="font-size: 92px;" id="text">0</h1>
+        <input type="number" id="holabola" value="0" onchange="STEPEN()">
+        <h1 class="text" style="font-size: 13px;">После ввода числа нажмите Enter</h1>
+        <a href="index.html" style="width: 128px; height: 32px; margin:64px">Хочу домой</a>
+    </div>
+</body>

@@ -1,0 +1,118 @@
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url(https://i.artfile.me/wallpaper/03-10-2015/1920x1080/vektornaya-grafika-grafika--graphics-bla-974432.jpg);
+	background-attachment: fixed;
+    background-repeat: no-repeat;
+	background-blend-mode: multiply;
+    background-size: cover;
+    height: 100vh;
+}
+
+a,button,input {
+    background-color: white;
+    color: black;
+	width: 256px;
+	height: 48px;
+	box-shadow: inset 0 0 0px black, 0 0 8px black;
+    border: #000000;
+    border: 2px;
+    border-radius: 8px;
+    transition: 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    text-decoration: none;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+
+    font-size: 16px;
+}
+a:hover,button:hover{
+    background-color: black;
+    color: white;
+	transition: 0.2s;
+    cursor: pointer;
+}
+
+.block{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+}
+
+.block > a,button,input{
+    margin: 16px;
+}
+
+.text{
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+
+
+
+:root {
+	--angle: 4deg;
+}
+
+.word-container {
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+}
+
+.word {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-family: "Montserrat";
+	font-size: 8rem;
+	font-weight: 900;
+	color: var(--color, #fff);
+	display: flex;
+	pointer-events: none;
+	user-select: none;
+	line-height: 5.8rem;
+
+	.char {
+		position: relative;
+		-webkit-text-stroke: 2px #000;
+		transform: translateY(-45%) rotate(var(--angle));
+		animation: up-and-down 2s ease infinite;
+		animation-delay: calc((var(--word-index) * -0.15s) + (var(--char-index) * 0.1s));
+		z-index: calc(-1 * var(--char-index));
+		margin-left: -1.6rem;
+	}
+}
+
+@keyframes up-and-down {
+	0%,
+	100% {
+		transform: translateY(-45%) rotate(var(--angle));
+	}
+	50% {
+		transform: translateY(45%) rotate(var(--angle));
+	}
+}

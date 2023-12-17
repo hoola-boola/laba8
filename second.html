@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>Тонусный сайт || Паге 3</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+    <script language="JavaScript">
+        function pipec(){
+            gg = 0;
+            maximum = 1000;
+            for(n=1;n<=maximum;n++){
+                gg+= ((-1)**n)*(1/((5*n)-1));
+            }
+        
+            alert(gg.toFixed(3));
+        }
+    </script>
+</head>
+<body>
+    <div class="block">
+        <button onClick="pipec()">Выпустить кракена</button>
+        <a href="index.html" style="width: 128px; height: 32px; margin:64px">Хочу домой</a>
+     </div>
+</body>

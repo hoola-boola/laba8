@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <title>Тонусный сайт || Паге 1</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+</head>
+<body>
+    
+<div class="block">
+
+    <span class="word-container" data-word="есс_юхууу_8_лаба!" data-word-repeat="3"
+		data-text-colors="#FD0000,#0046DB,#FEFCFE"></span>
+
+    <img onclick="clicked()" style="transform: translate(0, -100%); width: 64px; height: 64px; border-radius: 32px; background-color: rgb(255, 255, 255); background-blend-mode: multiply; cursor: pointer;"src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/arrow-circle-down-1024.png"/>
+</div>
+<div class="block">
+    <a href="first.html" >Задание 1</a>
+    <a href="second.html">Задание 2</a>
+</div>
+
+<script>
+const wordContainerEl = document.querySelector("[data-word]");
+const word = wordContainerEl.getAttribute("data-word");
+const wordRepeatTimes = wordContainerEl.getAttribute("data-word-repeat");
+const textColorsArray = wordContainerEl.getAttribute("data-text-colors").split(",");
+
+for (let i = 0; i < wordRepeatTimes; i++) {
+	const wordEl = document.createElement("span");
+	wordEl.className = "word";
+	wordEl.style.setProperty("--word-index", i);
+	wordEl.style.setProperty("--color", textColorsArray[i]);
+	for (let j = 0; j < word.length; j++) {
+		const charEl = document.createElement("span");
+		charEl.className = "char";
+		charEl.style.setProperty("--char-index", j);
+		charEl.innerHTML = word[j];
+		wordEl.appendChild(charEl);
+	}
+	wordContainerEl.appendChild(wordEl);
+}
+
+    bubble = document.body.scrollHeight/50;
+
+function clicked(){
+    hgh = 0;
+    jk = 0;
+    setTimeout(smoothscroll, 100);
+
+}
+function smoothscroll(){
+    window.scrollTo(0, hgh);
+    console.log(hgh);
+    jk++;
+    if(jk<50) setTimeout(smoothscroll, 5);
+    hgh+=bubble;
+}
+
+</script>
+</body>
